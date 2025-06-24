@@ -6,5 +6,7 @@ defmodule DaisyUIComponentsSiteWeb.Storybook do
     css_path: "/assets/storybook.css",
     js_path: "/assets/storybook.js",
     title: "Phoenix + DaisyUI",
-    sandbox_class: "daisy-ui-components-site-web"
+    sandbox_class: "daisy-ui-components-site-web",
+    # Show light/dark selector:
+    color_mode: true
 end
