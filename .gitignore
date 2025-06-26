@@ -30,3 +30,8 @@ daisy_ui_components-*.tar
 /priv/plts/*.plt.hash
 
 .env
+
+
+# Ignore IntelliJ IDEA project files.
+/.idea
+*.iml
