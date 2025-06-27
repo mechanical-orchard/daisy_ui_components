@@ -1,5 +1,6 @@
 defmodule DaisyUIComponents.NavPanel do
   use DaisyUIComponents, :component
+  import DaisyUIComponents.List
 
   @doc """
   Renders the navigation panel component. `current_url` is used to highlight the current nav item.
@@ -31,47 +32,16 @@ defmodule DaisyUIComponents.NavPanel do
       <.link :if={@logo_image} navigate="/">
         <img src={@logo_image} class="-ml-6 -mt-6" />
       </.link>
-      <ul role="list" class="flex flex-1 flex-col space-y-1 text-nowrap">
-        <%= for {name, url} <- @nav_items do %>
-          <li>
-            <.link
-              navigate={url}
-              class={"#{if URI.parse(@current_url).path == url, do: "bg-background-inverse-primary text-content-inverse-primary"} group flex gap-x-3 rounded-md p-2 text-lg hover:bg-background-inverse-primary hover:text-content-inverse-primary"}
-            >
-              {name}
-            </.link>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-    """
-  end
-
-  def nav_panel_savec(assigns) do
-    ~H"""
-    <div
-      id={@id}
-      class={[
-        "bg-white pt-6 flex flex-col px-4 h-full border-r border-zinc-200 w-64 min-w-64 justify-start",
-        "transition-all duration-300 ease-in-out"
-      ]}
-      phx-update="ignore"
-    >
-      <.link navigate="/">
-        <img src="/images/full_logo.png" class="-ml-6 -mt-6" />
-      </.link>
-      <ul role="list" class="flex flex-1 flex-col space-y-1 text-nowrap">
-        <%= for {name, url} <- @nav_items do %>
-          <li>
-            <.link
-              navigate={url}
-              class={"#{if URI.parse(@current_url).path == url, do: "bg-background-inverse-primary text-content-inverse-primary"} group flex gap-x-3 rounded-md p-2 text-lg hover:bg-background-inverse-primary hover:text-content-inverse-primary"}
-            >
-              {name}
-            </.link>
-          </li>
-        <% end %>
-      </ul>
+      <.list :for={{name, url} <- @nav_items}>
+        <:item>
+          <.link
+            navigate={url}
+            class={"#{if URI.parse(@current_url).path == url, do: "bg-background-inverse-primary text-content-inverse-primary"} group flex gap-x-3 rounded-md p-2 text-lg hover:bg-background-inverse-primary hover:text-content-inverse-primary"}
+          >
+            {name}
+          </.link>
+        </:item>
+      </.list>
     </div>
     """
   end
