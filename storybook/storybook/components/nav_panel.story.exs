@@ -16,8 +16,8 @@ defmodule Storybook.Components.NavPanel do
           id: "nav-panel",
           current_url: "/some-url",
           nav_items: [
-            {"daisyUI", "/some-url"},
-            {"Another URL", "/another-url"}
+            {"Navigation Item 1", "/"},
+            {"Navigation Item 2", "/"}
           ]
         }
       },
@@ -29,8 +29,8 @@ defmodule Storybook.Components.NavPanel do
           current_url: "/some-url",
           logo_image: "/images/logo.svg",
           nav_items: [
-            {"daisyUI", "/some-url"},
-            {"Another URL", "/another-url"}
+            {"Navigation Item 1", "/"},
+            {"Navigation Item 2", "/"}
           ]
         }
       }
