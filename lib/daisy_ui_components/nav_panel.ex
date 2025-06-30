@@ -23,25 +23,26 @@ defmodule DaisyUIComponents.NavPanel do
   def nav_panel(assigns) do
     ~H"""
     <.drawer class="h-56 lg:drawer-open" selector_id={@id}>
-    <:drawer_content class="flex flex-col items-center justify-center">
-    <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">
-      Open drawer
-    </label>
-    </:drawer_content>
-    <:drawer_side class="h-full absolute">
-      <.link :if={@logo_image} navigate="/">
-        <img src={@logo_image} class="-ml-6 -mt-6" />
-      </.link>
-      <.menu class="bg-base-200 text-base-content w-80 p-4">
-        <:item :for={{name, url} <- @nav_items} class={"#{if URI.parse(@current_url).path == url, do: "bg-background-inverse-primary text-content-inverse-primary"} group flex gap-x-3 rounded-md p-2 text-lg hover:bg-background-inverse-primary hover:text-content-inverse-primary"}>
-          <.link
-            navigate={url}
+      <:drawer_content class="flex flex-col items-center justify-center">
+        <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">
+          Open drawer
+        </label>
+      </:drawer_content>
+      <:drawer_side class="h-full absolute">
+        <.link :if={@logo_image} navigate="/">
+          <img src={@logo_image} class="-ml-6 -mt-6" />
+        </.link>
+        <.menu class="bg-base-200 text-base-content w-80 p-4">
+          <:item
+            :for={{name, url} <- @nav_items}
+            class={"#{if URI.parse(@current_url).path == url, do: "bg-background-inverse-primary text-content-inverse-primary"} group flex gap-x-3 rounded-md p-2 text-lg hover:bg-background-inverse-primary hover:text-content-inverse-primary"}
           >
-            {name}
-          </.link>
-        </:item>
-      </.menu>
-    </:drawer_side>
+            <.link navigate={url}>
+              {name}
+            </.link>
+          </:item>
+        </.menu>
+      </:drawer_side>
     </.drawer>
     """
   end
