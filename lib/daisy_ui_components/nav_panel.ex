@@ -1,6 +1,7 @@
 defmodule DaisyUIComponents.NavPanel do
   use DaisyUIComponents, :component
-  import DaisyUIComponents.List
+  import DaisyUIComponents.Drawer
+  import DaisyUIComponents.Menu
 
   @doc """
   Renders the navigation panel component. `current_url` is used to highlight the current nav item.
@@ -21,28 +22,36 @@ defmodule DaisyUIComponents.NavPanel do
 
   def nav_panel(assigns) do
     ~H"""
-    <div
-      id={@id}
-      class={[
-        "pt-6 flex flex-col px-4 h-full border-r border-zinc-200 w-64 min-w-64 justify-start",
-        "transition-all duration-300 ease-in-out"
-      ]}
-      phx-update="ignore"
-    >
+    <.drawer class="h-56 lg:drawer-open" selector_id={@id}>
+    <:drawer_content class="flex flex-col items-center justify-center">
+    <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">
+      Open drawer
+    </label>
+    </:drawer_content>
+    <:drawer_side class="h-full absolute">
       <.link :if={@logo_image} navigate="/">
         <img src={@logo_image} class="-ml-6 -mt-6" />
       </.link>
-      <.list :for={{name, url} <- @nav_items}>
-        <:item>
+      <.menu class="bg-base-200 text-base-content w-80 p-4">
+        <:item :for={{name, url} <- @nav_items} class={"#{if URI.parse(@current_url).path == url, do: "bg-background-inverse-primary text-content-inverse-primary"} group flex gap-x-3 rounded-md p-2 text-lg hover:bg-background-inverse-primary hover:text-content-inverse-primary"}>
           <.link
             navigate={url}
-            class={"#{if URI.parse(@current_url).path == url, do: "bg-background-inverse-primary text-content-inverse-primary"} group flex gap-x-3 rounded-md p-2 text-lg hover:bg-background-inverse-primary hover:text-content-inverse-primary"}
           >
             {name}
           </.link>
         </:item>
-      </.list>
-    </div>
+      </.menu>
+      <.menu class="bg-base-200 text-base-content w-80 p-4">
+        <:item :for={{name, url} <- @nav_items} class={"#{if URI.parse(@current_url).path == url, do: "bg-background-inverse-primary text-content-inverse-primary"} group flex gap-x-3 rounded-md p-2 text-lg hover:bg-background-inverse-primary hover:text-content-inverse-primary"}>
+          <.link
+            navigate={url}
+          >
+            {name}
+          </.link>
+        </:item>
+      </.menu>
+    </:drawer_side>
+    </.drawer>
     """
   end
 
