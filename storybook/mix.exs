@@ -50,7 +50,6 @@ defmodule DaisyUIComponentsSite.MixProject do
       {:bandit, "~> 1.2"},
       {:phoenix_storybook, "~> 0.8"},
       {:daisy_ui_components, path: "../"}
-      # {:daisy_ui_components, "~> 0.8"}
     ]
   end
 

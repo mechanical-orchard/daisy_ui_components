@@ -9,10 +9,6 @@
 /* Pull in classes from the code in the daisy_ui_components/lib dir: */
 @source "../../../lib/";
 
-
-/* Use the following if you're using the github (rather than local) daisy_ui_components: */
-/* @source "../../deps/daisy_ui_components"; */
-
 @plugin "../vendor/heroicons";
 @plugin "../node_modules/daisyui" {
   /* In practice, you will likely ship only with two themes, as below: */
