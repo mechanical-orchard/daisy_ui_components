@@ -8,6 +8,10 @@
       The heroicons installation itself is managed by your mix.exs */
    @plugin "../vendor/heroicons";
    
+   @plugin "../node_modules/daisyui" {
+     themes: false;
+   }
+
    /* daisyUI theme plugin. You can update this file by fetching the latest version with:
      curl -sLO https://github.com/saadeghi/daisyui/releases/latest/download/daisyui-theme.js
      We ship with two themes, a light one inspired on Phoenix colors and a dark one inspired
