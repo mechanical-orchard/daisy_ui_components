@@ -41,15 +41,6 @@ defmodule DaisyUIComponents.NavPanel do
           </.link>
         </:item>
       </.menu>
-      <.menu class="bg-base-200 text-base-content w-80 p-4">
-        <:item :for={{name, url} <- @nav_items} class={"#{if URI.parse(@current_url).path == url, do: "bg-background-inverse-primary text-content-inverse-primary"} group flex gap-x-3 rounded-md p-2 text-lg hover:bg-background-inverse-primary hover:text-content-inverse-primary"}>
-          <.link
-            navigate={url}
-          >
-            {name}
-          </.link>
-        </:item>
-      </.menu>
     </:drawer_side>
     </.drawer>
     """
