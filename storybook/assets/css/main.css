@@ -11,11 +11,11 @@
 @source "../../../lib/";
 
 @plugin "../vendor/heroicons";
-@plugin "../node_modules/daisyui" {
-  /* In practice, you will likely ship only with two themes, as below: */
-  /* themes: light --default, dark --prefersdark; */
-  themes: all;
+@plugin "../vendor/daisyui" {
+  themes: light --default, dark --prefersdark;
 }
+
+@import "../../../assets/css/daisy_ui_colors.css";
 
 @custom-variant phx-click-loading ([".phx-click-loading&", ".phx-click-loading &"]);
 @custom-variant phx-submit-loading ([".phx-submit-loading&", ".phx-submit-loading &"]);
