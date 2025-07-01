@@ -31,6 +31,7 @@ daisy_ui_components-*.tar
 
 .env
 
+/assets/node_modules
 
 # Ignore IntelliJ IDEA project files.
 /.idea
