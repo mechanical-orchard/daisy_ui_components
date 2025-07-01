@@ -17,6 +17,11 @@ defmodule Storybook.Components.NavPanel do
           class: "bg-base-200 shadow-xl rounded-box",
           id: "nav-panel",
           current_url: "/some-url",
+          current_nav_name: "System View",
+          current_user: %{
+            name: "John Doe",
+            email: "unknown@email.edu"
+          },
           nav_items: [
             {"Navigation Item 1", "/some-url"},
             {"Navigation Item 2", "/another-url"}
@@ -29,6 +34,11 @@ defmodule Storybook.Components.NavPanel do
           class: "bg-base-200 shadow-xl rounded-box",
           id: "nav-panel-with-logo",
           current_url: "/some-url",
+          current_nav_name: "System View",
+          current_user: %{
+            name: "John Doe",
+            email: "unknown@email.edu"
+          },
           logo_image: "/images/logo.svg",
           nav_items: [
             {"Navigation Item 1", "/some-url"},
