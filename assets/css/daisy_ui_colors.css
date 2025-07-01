@@ -1,15 +1,6 @@
-/* See the Tailwind configuration guide for advanced usage
-   https://tailwindcss.com/docs/configuration */
 
-   @import "tailwindcss" source(none);
-   @source "../css";
-   
-   /* A Tailwind plugin that makes "hero-#{ICON}" classes available.
-      The heroicons installation itself is managed by your mix.exs */
-   @plugin "../vendor/heroicons";
-   
-   @plugin "../node_modules/daisyui" {
-     themes: false;
+   .foobar {
+    background-color: red;
    }
 
    /* daisyUI theme plugin. You can update this file by fetching the latest version with:
@@ -62,7 +53,7 @@
      --color-base-200: oklch(96% 0.001 286.375);
      --color-base-300: oklch(92% 0.004 286.32);
      --color-base-content: oklch(21% 0.006 285.885);
-     --color-primary: oklch(70% 0.213 47.604);
+     --color-primary: oklch(69% 0.1 144);
      --color-primary-content: oklch(98% 0.016 73.684);
      --color-secondary: oklch(55% 0.027 264.364);
      --color-secondary-content: oklch(98% 0.002 247.839);
@@ -87,14 +78,4 @@
      --depth: 1;
      --noise: 0;
    }
-   
-   /* Add variants based on LiveView classes */
-   @custom-variant phx-click-loading (.phx-click-loading&, .phx-click-loading &);
-   @custom-variant phx-submit-loading (.phx-submit-loading&, .phx-submit-loading &);
-   @custom-variant phx-change-loading (.phx-change-loading&, .phx-change-loading &);
-   
-   /* Make LiveView wrapper divs transparent for layout */
-   [data-phx-session] { display: contents }
-   
-   /* This file is for your main application CSS */
    
