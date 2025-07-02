@@ -11,9 +11,7 @@
 @source "../../../lib/";
 
 @plugin "../vendor/heroicons";
-@plugin "../vendor/daisyui" {
-  themes: light --default, dark --prefersdark;
-}
+@plugin "../vendor/daisyui";
 
 @import "../../../assets/css/daisy_ui_colors.css";
 
