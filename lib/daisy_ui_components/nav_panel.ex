@@ -1,6 +1,8 @@
 defmodule DaisyUIComponents.NavPanel do
   use DaisyUIComponents, :component
   import DaisyUIComponents.Drawer
+  import DaisyUIComponents.Icon
+  import DaisyUIComponents.Label
   import DaisyUIComponents.Menu
 
   @doc """
@@ -30,17 +32,8 @@ defmodule DaisyUIComponents.NavPanel do
           <header class="px-4 border-b shadow-sm">
             <div class="min-h-20 flex items-center justify-between py-3 text-sm">
               <div class="flex items-center">
-                <.nav_trigger aria-label="Toggle navigation menu" target={@id} class="cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-6"
-                  >
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
-                  </svg>
+                <.nav_trigger aria-label="Toggle navigation menu" target={@id} class="bg-base-200 text-base-content cursor-pointer">
+                  <.icon name="hero-bars-2" />
                 </.nav_trigger>
 
                 <span class="ml-3 text-lg">
@@ -66,10 +59,7 @@ defmodule DaisyUIComponents.NavPanel do
       </:drawer_content>
       <:drawer_side>
         <.menu class="bg-base-200 text-base-content min-h-full w-80 p-4">
-          <:item
-            :if={@logo_image}
-            class="gap-x-3 p-2 hover:bg-background-inverse-primary hover:text-content-inverse-primary"
-          >
+          <:item :if={@logo_image} class="gap-x-3 p-2" >
             <div class="flex items-center justify-center">
               <.link navigate="/">
                 <img src={@logo_image} class="w-full" />
@@ -78,11 +68,9 @@ defmodule DaisyUIComponents.NavPanel do
           </:item>
           <:item
             :for={{name, url} <- @nav_items}
-            class={"#{if URI.parse(@current_url).path == url, do: "bg-background-inverse-primary text-content-inverse-primary"} group flex gap-x-3 rounded-md p-2 text-lg hover:bg-background-inverse-primary hover:text-content-inverse-primary"}
+            class={"group flex gap-x-3 rounded-md p-2 text-lg #{if URI.parse(@current_url).path == url, do: "bg-background-inverse-primary text-content-inverse-primary"} hover:bg-background-inverse-primary hover:text-content-inverse-primary"}
           >
-            <.link navigate={url}>
-              {name}
-            </.link>
+            <.link navigate={url}> {name} </.link>
           </:item>
         </.menu>
       </:drawer_side>
@@ -105,9 +93,9 @@ defmodule DaisyUIComponents.NavPanel do
 
   def nav_trigger(assigns) do
     ~H"""
-    <label for={@target} class="bg-base-200 text-content-base btn drawer-button lg" {@rest}>
+    <.label for={@target} class="bg-base-200 text-content-base btn drawer-button lg" {@rest}>
       {render_slot(@inner_block)}
-    </label>
+    </.label>
     """
   end
 end
