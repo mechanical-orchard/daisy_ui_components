@@ -82,6 +82,7 @@ defmodule DaisyUIComponents do
       import DaisyUIComponents.Tabs
       import DaisyUIComponents.TextInput
       import DaisyUIComponents.Textarea
+      import DaisyUIComponents.ThemeToggle
       import DaisyUIComponents.Toggle
       import DaisyUIComponents.Tooltip
     end
