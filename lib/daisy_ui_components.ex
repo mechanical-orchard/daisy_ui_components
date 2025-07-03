@@ -44,6 +44,7 @@ defmodule DaisyUIComponents do
     quote do
       import DaisyUIComponents.Accordion
       import DaisyUIComponents.Alert
+      import DaisyUIComponents.ApplicationLayout
       import DaisyUIComponents.Avatar
       import DaisyUIComponents.Back
       import DaisyUIComponents.Badge

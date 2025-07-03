@@ -1,13 +1,13 @@
-defmodule Storybook.Components.Application do
+defmodule Storybook.Components.ApplicationLayout do
   use PhoenixStorybook.Story, :component
-  alias DaisyUIComponents.Application
+  alias DaisyUIComponents.ApplicationLayout
   alias DaisyUIComponents.Alert
   alias DaisyUIComponents.Icon
   alias DaisyUIComponents.Navbar
   alias DaisyUIComponents.NavPanel
   alias DaisyUIComponents.ThemeToggle
 
-  def function, do: &Application.app/1
+  def function, do: &ApplicationLayout.app/1
 
   def imports,
     do: [

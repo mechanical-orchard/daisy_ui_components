@@ -1,4 +1,4 @@
-defmodule DaisyUIComponents.Application do
+defmodule DaisyUIComponents.ApplicationLayout do
   @moduledoc """
   Application layout component
 
