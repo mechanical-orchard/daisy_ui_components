@@ -46,7 +46,7 @@ defmodule DaisyUIComponentsSite.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
-      {:dns_cluster, "~> 0.1.1"},
+      {:dns_cluster, "~> 0.2"},
       {:bandit, "~> 1.2"},
       # When actively modifying phoenix_storybook code use this:
       # {:phoenix_storybook, path: "../../phoenix_storybook"},
