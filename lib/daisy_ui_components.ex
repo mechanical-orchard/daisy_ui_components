@@ -51,6 +51,7 @@ defmodule DaisyUIComponents do
       import DaisyUIComponents.Breadcrumbs
       import DaisyUIComponents.Button
       import DaisyUIComponents.Card
+      import DaisyUIComponents.CardColumn
       import DaisyUIComponents.Checkbox
       import DaisyUIComponents.Collapse
       import DaisyUIComponents.Drawer
@@ -77,6 +78,7 @@ defmodule DaisyUIComponents do
       import DaisyUIComponents.Radio
       import DaisyUIComponents.Range
       import DaisyUIComponents.Select
+      import DaisyUIComponents.Sheet
       import DaisyUIComponents.Stat
       import DaisyUIComponents.Swap
       import DaisyUIComponents.Table
