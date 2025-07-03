@@ -47,10 +47,7 @@ defmodule DaisyUIComponents.Sheet do
 
   def sheet(assigns) do
     ~H"""
-    <div
-      class={classes([@class])}
-      phx-mounted={@show && @target && JS.exec("phx-show-sheet", to: "#" <> @target)}
-    >
+    <div class={classes([@class])} phx-mounted={@show && @target && JS.exec("phx-show-sheet", to: "#" <> @target)}>
       {render_slot(@inner_block)}
     </div>
     """

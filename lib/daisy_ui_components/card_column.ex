@@ -17,10 +17,15 @@ defmodule DaisyUIComponents.CardColumn do
 
   def card_column(assigns) do
     ~H"""
-    <div class={classes([
-      "bg-base-100 p-4 border border-base-300 rounded-lg flex flex-col gap-4 overflow-y-scroll [scrollbar-width:none] shadow-sm row-start-2 row-end-auto",
-      @class
-    ])} {@rest}>
+    <div
+      class={
+        classes([
+          "bg-base-100 p-4 border border-base-300 rounded-lg flex flex-col gap-4 overflow-y-scroll [scrollbar-width:none] shadow-sm row-start-2 row-end-auto",
+          @class
+        ])
+      }
+      {@rest}
+    >
       <%= for workload <- @workloads do %>
         <.card class="bg-base-100 border border-base-300">
           <.card_body>
@@ -37,10 +42,7 @@ defmodule DaisyUIComponents.CardColumn do
                     {workload.status}
                   <% end %>
                 </div>
-                <span
-                  class="flex justify-start items-end items-baseline justify-end grow"
-                  data-testid="workload-team"
-                >
+                <span class="flex justify-start items-end items-baseline justify-end grow" data-testid="workload-team">
                   <.badge color="primary">{workload.team}</.badge>
                 </span>
               </div>

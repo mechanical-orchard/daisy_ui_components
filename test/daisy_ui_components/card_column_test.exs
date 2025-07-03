@@ -15,7 +15,9 @@ defmodule DaisyUIComponents.CardColumnTest do
       """
       |> parse_component()
       |> assert_component("div")
-      |> assert_class("bg-base-100 p-4 border border-base-300 rounded-lg flex flex-col gap-4 overflow-y-scroll [scrollbar-width:none] shadow-sm row-start-2 row-end-auto")
+      |> assert_class(
+        "bg-base-100 p-4 border border-base-300 rounded-lg flex flex-col gap-4 overflow-y-scroll [scrollbar-width:none] shadow-sm row-start-2 row-end-auto"
+      )
     end
 
     test "renders card column with workloads" do
@@ -41,7 +43,9 @@ defmodule DaisyUIComponents.CardColumnTest do
       """
       |> parse_component()
       |> assert_component("div")
-      |> assert_class("bg-base-100 p-4 border border-base-300 rounded-lg flex flex-col gap-4 overflow-y-scroll [scrollbar-width:none] shadow-sm row-start-2 row-end-auto")
+      |> assert_class(
+        "bg-base-100 p-4 border border-base-300 rounded-lg flex flex-col gap-4 overflow-y-scroll [scrollbar-width:none] shadow-sm row-start-2 row-end-auto"
+      )
 
       # Check that workload names appear in card titles
       workload_1_card =
@@ -73,7 +77,9 @@ defmodule DaisyUIComponents.CardColumnTest do
       """
       |> parse_component()
       |> assert_component("div")
-      |> assert_class("bg-base-100 p-4 border border-base-300 rounded-lg flex flex-col gap-4 overflow-y-scroll [scrollbar-width:none] shadow-sm row-start-2 row-end-auto custom-class")
+      |> assert_class(
+        "bg-base-100 p-4 border border-base-300 rounded-lg flex flex-col gap-4 overflow-y-scroll [scrollbar-width:none] shadow-sm row-start-2 row-end-auto custom-class"
+      )
     end
 
     test "handles workloads without status" do

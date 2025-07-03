@@ -13,7 +13,16 @@ defmodule Storybook.Components.Sheet do
       {Button, [button: 1]},
       {Input, [input: 1]},
       {Label, [label: 1]},
-      {Sheet, [sheet_trigger: 1, sheet_content: 1, sheet_header: 1, sheet_title: 1, sheet_description: 1, sheet_footer: 1, sheet_close: 1]}
+      {Sheet,
+       [
+         sheet_trigger: 1,
+         sheet_content: 1,
+         sheet_header: 1,
+         sheet_title: 1,
+         sheet_description: 1,
+         sheet_footer: 1,
+         sheet_close: 1
+       ]}
     ]
 
   def variations do
