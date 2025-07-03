@@ -24,7 +24,7 @@ defmodule DaisyUIComponents.NavPanel do
     <div
       id={@id}
       class={[
-        "pt-6 flex flex-col px-4 min-h-full border-r border-zinc-200 w-64 min-w-64 justify-start",
+        "pt-6 flex flex-col px-4 min-h-full border-r border-base-300 w-64 min-w-64 justify-start",
         "transition-all duration-300 ease-in-out"
       ]}
       phx-update="ignore"

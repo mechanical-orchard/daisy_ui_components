@@ -65,7 +65,7 @@ defmodule DaisyUIComponents.ApplicationLayout do
 
       <.nav_panel id={@nav_panel_id} current_url={@current_url} nav_items={@nav_items} logo_image={@logo_image} />
       <div class="flex flex-col grow relative overflow-hidden">
-        <header class="px-4 border-b border-zinc-200 shadow-sm z-10">
+        <header class="px-4 border-b border-base-300 shadow-sm z-10">
           <div :if={@show_theme_toggle} class="flex items-center justify-end pt-6 text-sm">
             <.theme_toggle />
           </div>
@@ -91,7 +91,7 @@ defmodule DaisyUIComponents.ApplicationLayout do
                   <span class="mr-4 text-base">Hello, {@current_user.name}</span>
                   <.link
                     role="button"
-                    class="py-2.5 px-5 mb-2 text-sm text-base focus:outline-hidden rounded-lg border border-gray-200 hover:bg-background-inverse-primary hover:text-content-inverse-primary focus:z-10 focus:ring-4 focus:ring-gray-100"
+                    class="py-2.5 px-5 mb-2 text-sm text-base focus:outline-hidden rounded-lg border border-base-300 hover:bg-background-inverse-primary hover:text-content-inverse-primary focus:z-10 focus:ring-4 focus:ring-base-200"
                     href="/logout"
                   >
                     Logout
@@ -104,7 +104,7 @@ defmodule DaisyUIComponents.ApplicationLayout do
         <main class="bg-background-secondary h-[calc(100vh-64px)] w-full overflow-hidden">
           <div class="h-full w-full flex flex-col">
             <div class="flex flex-col px-4 py-4 h-full">
-              <div class="w-full flex border-t border-l border-r border-slate-300 rounded-t-md py-3 px-3 items-center space-x-2">
+              <div class="w-full flex border-t border-l border-r border-base-300 rounded-t-md py-3 px-3 items-center space-x-2">
                 {render_slot(@inner_block)}
               </div>
             </div>
