@@ -104,9 +104,7 @@ defmodule DaisyUIComponents.ApplicationLayout do
         <main class="bg-background-secondary h-[calc(100vh-64px)] w-full overflow-hidden">
           <div class="h-full w-full flex flex-col">
             <div class="flex flex-col px-4 py-4 h-full">
-              <div class="w-full flex border-t border-l border-r border-base-300 rounded-t-md py-3 px-3 items-center space-x-2">
-                {render_slot(@inner_block)}
-              </div>
+              {render_slot(@inner_block)}
             </div>
           </div>
         </main>
