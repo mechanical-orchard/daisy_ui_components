@@ -91,7 +91,7 @@ defmodule DaisyUIComponents.ApplicationLayout do
                   <span class="mr-4 text-base">Hello, {@current_user.name}</span>
                   <.link
                     role="button"
-                    class="py-2.5 px-5 mb-2 text-sm text-base focus:outline-hidden rounded-lg border border-base-300 hover:bg-background-inverse-primary hover:text-content-inverse-primary focus:z-10 focus:ring-4 focus:ring-base-200"
+                    class="py-2.5 px-5 text-sm text-base focus:outline-hidden rounded-lg border border-base-300 hover:bg-background-inverse-primary hover:text-content-inverse-primary focus:z-10 focus:ring-4 focus:ring-base-200"
                     href="/logout"
                   >
                     Logout

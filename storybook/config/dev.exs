@@ -52,6 +52,7 @@ config :daisy_ui_components_site, DaisyUIComponentsSiteWeb.Endpoint,
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
       ~r"lib/daisy_ui_components_site_web/(controllers|live|components)/.*(ex|heex)$",
+      ~r"../lib/daisy_ui_components/.*ex$",
       ~r"storybook/.*(exs)$"
     ]
   ]
