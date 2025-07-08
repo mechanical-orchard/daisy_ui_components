@@ -2,8 +2,8 @@ defmodule Storybook.Components.ApplicationLayout do
   use PhoenixStorybook.Story, :component
   alias DaisyUIComponents.ApplicationLayout
   alias DaisyUIComponents.Alert
+  alias DaisyUIComponents.Header
   alias DaisyUIComponents.Icon
-  alias DaisyUIComponents.Navbar
   alias DaisyUIComponents.NavPanel
   alias DaisyUIComponents.ThemeToggle
 
@@ -12,8 +12,8 @@ defmodule Storybook.Components.ApplicationLayout do
   def imports,
     do: [
       {Alert, flash_group: 1},
+      {Header, header: 1},
       {Icon, icon: 1},
-      {Navbar, navbar: 1},
       {NavPanel, nav_panel: 1},
       {ThemeToggle, theme_toggle: 1}
     ]

@@ -6,6 +6,7 @@ defmodule DaisyUIComponents.ApplicationLayout do
 
   use DaisyUIComponents, :component
   import DaisyUIComponents.Alert
+  import DaisyUIComponents.Header
   import DaisyUIComponents.Icon
   import DaisyUIComponents.Navbar
   import DaisyUIComponents.NavPanel
@@ -65,27 +66,25 @@ defmodule DaisyUIComponents.ApplicationLayout do
 
       <.nav_panel id={@nav_panel_id} current_url={@current_url} nav_items={@nav_items} logo_image={@logo_image} />
       <div class="flex flex-col grow relative overflow-hidden">
-        <header class="px-4 border-b border-base-300 shadow-sm z-10">
+        <div class="px-4 border-b border-base-300 shadow-sm z-10">
           <div :if={@show_theme_toggle} class="flex items-center justify-end pt-6 text-sm">
             <.theme_toggle />
           </div>
-          <.navbar class="min-h-20 flex items-center justify-between py-3 text-sm">
-            <:navbar_start>
-              <div class="flex items-center">
-                <.nav_trigger
-                  aria-label="Toggle navigation menu"
-                  target={@nav_panel_id}
-                  class="bg-base-200 text-base-content cursor-pointer"
-                >
-                  <.icon name="hero-bars-2" />
-                </.nav_trigger>
+          <.header class="min-h-20 flex items-center justify-between py-3 text-sm">
+            <div class="flex items-center">
+              <.nav_trigger
+                aria-label="Toggle navigation menu"
+                target={@nav_panel_id}
+                class="bg-base-200 text-base-content cursor-pointer"
+              >
+                <.icon name="hero-bars-2" />
+              </.nav_trigger>
 
-                <span class="ml-3 text-lg">
-                  {@current_nav_name}
-                </span>
-              </div>
-            </:navbar_start>
-            <:navbar_end>
+              <span class="ml-3 text-lg">
+                {@current_nav_name}
+              </span>
+            </div>
+            <:actions>
               <%= if @current_user do %>
                 <div class="min-h-20 flex items-center justify-between py-3 text-sm">
                   <span class="mr-4 text-base">Hello, {@current_user.name}</span>
@@ -98,9 +97,9 @@ defmodule DaisyUIComponents.ApplicationLayout do
                   </.link>
                 </div>
               <% end %>
-            </:navbar_end>
-          </.navbar>
-        </header>
+            </:actions>
+          </.header>
+        </div>
         <main class="bg-background-secondary h-[calc(100vh-64px)] w-full overflow-hidden">
           <div class="h-full w-full flex flex-col">
             <div class="flex flex-col px-4 py-4 h-full">
