@@ -8,7 +8,6 @@ defmodule DaisyUIComponents.ApplicationLayout do
   import DaisyUIComponents.Alert
   import DaisyUIComponents.Header
   import DaisyUIComponents.Icon
-  import DaisyUIComponents.Navbar
   import DaisyUIComponents.NavPanel
   import DaisyUIComponents.ThemeToggle
 
