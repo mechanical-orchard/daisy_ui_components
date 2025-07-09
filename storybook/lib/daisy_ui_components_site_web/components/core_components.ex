@@ -232,11 +232,11 @@ defmodule DaisyUIComponentsSiteWeb.CoreComponents do
     ~H"""
     <button
       type={@type}
-              class={[
-          "phx-submit-loading:opacity-75 rounded-lg bg-neutral hover:bg-neutral-focus py-2 px-3",
-          "text-sm font-semibold leading-6 text-neutral-content active:text-neutral-content/80",
-          @class
-        ]}
+      class={[
+        "phx-submit-loading:opacity-75 rounded-lg bg-neutral hover:bg-neutral-focus py-2 px-3",
+        "text-sm font-semibold leading-6 text-neutral-content active:text-neutral-content/80",
+        @class
+      ]}
       {@rest}
     >
       {render_slot(@inner_block)}
