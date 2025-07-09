@@ -110,8 +110,8 @@ defmodule DaisyUIComponents.Alert do
       <div :if={@title} class="flex items-center">
         <.icon class="mr-2" name={get_icon(@color)} />
         <div class="flex flex-col">
-          <h3 class="font-bold">{@title}</h3>
-          <span class="text-xs">{msg}</span>
+          <h3 class="font-bold text-base-content">{@title}</h3>
+          <span class="text-xs text-base-content/70">{msg}</span>
         </div>
       </div>
       <.icon :if={!@title} class="mr-2" name={get_icon(@color)} />

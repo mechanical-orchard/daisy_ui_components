@@ -14,7 +14,7 @@ defmodule DaisyUIComponents.Hero do
 
       <.hero>
         <:content>
-          <h1 class="text-5xl font-bold">Hello there</h1>
+          <h1 class="text-5xl font-bold text-base-content">Hello there</h1>
         </:content>
       </.hero>
   """

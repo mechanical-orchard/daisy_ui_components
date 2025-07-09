@@ -72,7 +72,7 @@ defmodule DaisyUIComponents.Sheet do
     <div
       class={
         classes([
-          "sheet-overlay fixed hidden inset-0 z-50 bg-base-content/15",
+          "sheet-overlay fixed hidden inset-0 z-50 bg-base-content/75",
           @class
         ])
       }
@@ -122,7 +122,7 @@ defmodule DaisyUIComponents.Sheet do
         role="sheet"
         class={
           classes([
-            "sheet-content-wrap hidden fixed z-50 bg-background shadow-lg transition",
+            "sheet-content-wrap hidden fixed z-50 bg-base-100 shadow-lg transition",
             @variant_class,
             @class
           ])
@@ -138,7 +138,7 @@ defmodule DaisyUIComponents.Sheet do
           <% else %>
             <button
               type="button"
-              class="ring-offset-background absolute top-4 right-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:ring-ring focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none"
+              class="ring-offset-base-100 absolute top-4 right-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:ring-base-content focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none"
               phx-click={hide_sheet(@id, @side)}
             >
               <.icon name="hero-x-mark-solid" class="h-4 w-4" />
@@ -168,7 +168,7 @@ defmodule DaisyUIComponents.Sheet do
 
   def sheet_title(assigns) do
     ~H"""
-    <h3 class={classes(["text-lg font-semibold text-foreground", @class])}>
+    <h3 class={classes(["text-lg font-semibold text-base-content", @class])}>
       {render_slot(@inner_block)}
     </h3>
     """
@@ -179,7 +179,7 @@ defmodule DaisyUIComponents.Sheet do
 
   def sheet_description(assigns) do
     ~H"""
-    <p class={classes(["text-sm text-muted-foreground", @class])}>
+    <p class={classes(["text-sm text-base-content/60", @class])}>
       {render_slot(@inner_block)}
     </p>
     """
