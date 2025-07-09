@@ -1,0 +1,50 @@
+# Cursor Rules for DaisyUI Components (Elixir/Phoenix)
+
+## Code Formatting
+- Always run `mix format` before committing code
+- Follow the project's `.formatter.exs` configuration
+- Maintain consistent indentation and line length (120 characters)
+- Use proper spacing around operators and function definitions
+
+## Elixir Coding Standards
+- Use descriptive function and variable names
+- Follow Elixir naming conventions (snake_case for functions/variables, PascalCase for modules)
+- Add @doc strings for public functions
+- Include @spec type annotations for public functions
+- Use pattern matching effectively and avoid deeply nested conditionals
+
+## Phoenix LiveView Components
+- All components should use `DaisyUIComponents, :component`
+- Include proper @doc strings with examples for all public component functions
+- Use semantic HTML elements where appropriate
+- Follow DaisyUI color system (base-content, base-100, base-200, etc.)
+- Avoid hardcoded colors - use DaisyUI semantic classes
+
+## Testing Requirements
+- Always fix compiler warnings when running tests
+- Write tests for all public functions
+- Use descriptive test names that explain the behavior being tested
+- Include both positive and negative test cases
+
+## Git Commit Standards
+- Run `mix format` before every commit (handled by pre-commit hook)
+- Use conventional commit messages
+- Include ticket references in format [sc-XXXXX]
+- Add Co-authored-by lines when pair programming
+
+## File Organization
+- Keep components in `/lib/daisy_ui_components/`
+- Mirror component structure in `/test/daisy_ui_components/`
+- Place storybook stories in `/storybook/storybook/components/`
+- Maintain parallel structure between main library and installer templates
+
+## Dependencies
+- Prefer built-in Elixir/Phoenix functionality over external dependencies
+- Use DaisyUI classes instead of custom CSS
+- Import only necessary functions to keep namespaces clean
+
+## Performance
+- Use pattern matching in function heads for better performance
+- Avoid unnecessary computation in render functions
+- Use assigns efficiently in LiveView components
+- Consider using `assign_new/3` for expensive computations

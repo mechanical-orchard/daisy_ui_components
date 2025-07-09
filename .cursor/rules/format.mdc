@@ -1,0 +1,32 @@
+# Elixir Code Formatting Rules
+
+## Automatic Formatting
+Always run `mix format` before committing code. This is enforced by:
+1. Git pre-commit hook (automatically runs on commit)
+2. Manual execution: `mix format`
+3. IDE integration (recommended to format on save)
+
+## Formatting Configuration
+- Follow `.formatter.exs` settings
+- Line length: 120 characters
+- Import dependencies: Phoenix, LiveView
+- Includes subdirectories: storybook
+
+## When to Format
+- Before every commit (automated)
+- After significant code changes
+- When code style becomes inconsistent
+- Before code reviews
+
+## Bypass (Emergency Only)
+If absolutely necessary, bypass with:
+```bash
+git commit --no-verify
+```
+**Note:** This should only be used in emergencies and the code should be formatted in the next commit.
+
+## IDE Setup
+Configure your editor to:
+- Run `mix format` on save
+- Show formatting errors inline  
+- Use project's `.formatter.exs` configuration
