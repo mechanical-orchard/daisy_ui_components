@@ -175,8 +175,6 @@ defmodule Storybook.Components.Colors do
               <th class="text-center" data-theme="dark">Dark</th>
               <th class="text-left">Color name</th>
               <th class="text-left">CSS variable</th>
-              <th class="text-left">Light OKLCH</th>
-              <th class="text-left">Dark OKLCH</th>
               <th class="text-left">Where to use</th>
             </tr>
           </thead>
@@ -184,15 +182,21 @@ defmodule Storybook.Components.Colors do
             <%= for color <- @colors do %>
               <tr>
                 <td class="text-center" data-theme="light">
-                  <div class={"w-16 h-12 rounded-lg " <> color.class <> " border border-base-300 mx-auto"}></div>
+                  <div class={"w-56 h-16 rounded-lg " <> color.class <> " border border-base-300 mx-auto flex items-center justify-center"}>
+                    <span class={"text-xs font-mono " <> color.class <> " px-1 rounded whitespace-nowrap"}>
+                      {color.light_oklch}
+                    </span>
+                  </div>
                 </td>
                 <td class="text-center" data-theme="dark">
-                  <div class={"w-16 h-12 rounded-lg " <> color.class <> " border border-base-300 mx-auto"}></div>
+                  <div class={"w-56 h-16 rounded-lg " <> color.class <> " border border-base-300 mx-auto flex items-center justify-center"}>
+                    <span class={"text-xs font-mono " <> color.class <> " px-1 rounded whitespace-nowrap"}>
+                      {color.dark_oklch}
+                    </span>
+                  </div>
                 </td>
                 <td class="font-mono text-sm">{color.name}</td>
                 <td class="font-mono text-xs">{color.class}</td>
-                <td class="font-mono text-xs">{color.light_oklch}</td>
-                <td class="font-mono text-xs">{color.dark_oklch}</td>
                 <td class="text-xs text-base-content/70">{color.description}</td>
               </tr>
             <% end %>
