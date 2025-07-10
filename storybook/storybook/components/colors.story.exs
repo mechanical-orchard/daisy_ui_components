@@ -76,7 +76,7 @@ defmodule Storybook.Components.Colors do
       </div>
 
       <div class="overflow-x-auto">
-        <table class="table w-full">
+        <table class="table w-full mb-20">
           <thead>
             <tr>
               <th class="text-center" data-theme="light">Light</th>
@@ -102,21 +102,6 @@ defmodule Storybook.Components.Colors do
             <% end %>
           </tbody>
         </table>
-      </div>
-      
-    <!-- Description Section -->
-      <div class="space-y-4">
-        <h3 class="text-xl font-semibold">Color Descriptions</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <%= for color <- @colors do %>
-            <div class="card bg-base-100 shadow-sm border border-base-300">
-              <div class="card-body p-4">
-                <h4 class="card-title text-sm font-mono">{color.class}</h4>
-                <p class="text-xs text-base-content/70">{color.description}</p>
-              </div>
-            </div>
-          <% end %>
-        </div>
       </div>
     </div>
     """
