@@ -134,9 +134,9 @@ defmodule Storybook.Components.Colors do
     ~H"""
     <div class="max-w-7xl mx-auto space-y-8">
       <div class="text-center">
-        <h1 class="text-4xl font-bold mb-4">DaisyUI Colors</h1>
+        <h1 class="text-4xl font-bold mb-4">Mechanical Orchard Colors</h1>
         <p class="text-lg text-base-content/70">
-          Standard DaisyUI color palette with light and dark mode variants side by side.<br />
+          Mechanical Orchard color palette with light and dark mode variants side by side<br />
           <a
             href="https://daisyui.com/docs/colors/#list-of-all-daisyui-color-names"
             class="link link-primary"
