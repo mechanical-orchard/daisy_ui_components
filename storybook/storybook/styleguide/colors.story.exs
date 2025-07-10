@@ -138,7 +138,7 @@ defmodule Storybook.Components.Colors do
       <div class="text-center">
         <h1 class="text-4xl font-bold mb-4">Mechanical Orchard Colors</h1>
         <p class="text-lg text-base-content/70">
-          Mechanical Orchard color palette with light and dark mode variants side by side<br />
+          Mechanical Orchard color palette with light and dark mode variants<br />
           <a
             href="https://daisyui.com/docs/colors/#list-of-all-daisyui-color-names"
             class="link link-primary"
@@ -168,6 +168,9 @@ defmodule Storybook.Components.Colors do
                     <span
                       class={"text-xs font-mono " <> color.class <> " px-1 rounded whitespace-nowrap"}
                       id={"oklch-light-" <> color.name}
+                      phx-hook="OklchColorValue"
+                      data-theme="light"
+                      data-css-var={color.css_var}
                     >
                       Loading...
                     </span>
@@ -178,6 +181,9 @@ defmodule Storybook.Components.Colors do
                     <span
                       class={"text-xs font-mono " <> color.class <> " px-1 rounded whitespace-nowrap"}
                       id={"oklch-dark-" <> color.name}
+                      phx-hook="OklchColorValue"
+                      data-theme="dark"
+                      data-css-var={color.css_var}
                     >
                       Loading...
                     </span>
@@ -192,44 +198,6 @@ defmodule Storybook.Components.Colors do
         </table>
       </div>
     </div>
-
-    <script>
-      onMounted(() => {
-        const colors = <%= Jason.encode!(@colors) %>;
-
-        function updateOKLCHValues() {
-          colors.forEach(color => {
-            // Get the light theme element
-            const lightElement = document.getElementById(`oklch-light-${color.name}`);
-            if (lightElement) {
-              const lightContainer = lightElement.closest('[data-theme="light"]');
-              if (lightContainer) {
-                const computedStyle = window.getComputedStyle(lightContainer);
-                const backgroundColor = computedStyle.getPropertyValue(color.css_var);
-                lightElement.textContent = backgroundColor || 'N/A';
-              }
-            }
-
-            // Get the dark theme element
-            const darkElement = document.getElementById(`oklch-dark-${color.name}`);
-            if (darkElement) {
-              const darkContainer = darkElement.closest('[data-theme="dark"]');
-              if (darkContainer) {
-                const computedStyle = window.getComputedStyle(darkContainer);
-                const backgroundColor = computedStyle.getPropertyValue(color.css_var);
-                darkElement.textContent = backgroundColor || 'N/A';
-              }
-            }
-          });
-        }
-
-        // Run on mount
-        updateOKLCHValues();
-
-        // Also run when theme changes (if using theme toggle)
-        document.addEventListener('DOMContentLoaded', updateOKLCHValues);
-      })
-    </script>
     """
   end
 end
