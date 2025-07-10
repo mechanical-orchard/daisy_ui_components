@@ -7,31 +7,26 @@ defmodule Storybook.Components.Colors do
   def render(assigns) do
     colors = [
       {"primary", "--color-primary", "Primary brand color, The main color of your brand"},
+      {"primary-content", "--color-primary-content", "Foreground content color to use on primary color"},
       {"secondary", "--color-secondary", "Secondary brand color, The optional, secondary color of your brand"},
+      {"secondary-content", "--color-secondary-content", "Foreground content color to use on secondary color"},
       {"accent", "--color-accent", "Accent brand color, The optional, accent color of your brand"},
+      {"accent-content", "--color-accent-content", "Foreground content color to use on accent color"},
       {"neutral", "--color-neutral", "Neutral dark color, For not-saturated parts of UI"},
+      {"neutral-content", "--color-neutral-content", "Foreground content color to use on neutral color"},
       {"base-100", "--color-base-100", "Base surface color of page, used for blank backgrounds"},
       {"base-200", "--color-base-200", "Base color, darker shade, to create elevations"},
       {"base-300", "--color-base-300", "Base color, even more darker shade, to create elevations"},
+      {"base-content", "--color-base-content", "Foreground content color to use on base color"},
       {"info", "--color-info", "Info color, For informative/helpful messages"},
+      {"info-content", "--color-info-content", "Foreground content color to use on info color"},
       {"success", "--color-success", "Success color, For success/safe messages"},
+      {"success-content", "--color-success-content", "Foreground content color to use on success color"},
       {"warning", "--color-warning", "Warning color, For warning/caution messages"},
-      {"error", "--color-error", "Error color, For error/danger/destructive messages"}
+      {"warning-content", "--color-warning-content", "Foreground content color to use on warning color"},
+      {"error", "--color-error", "Error color, For error/danger/destructive messages"},
+      {"error-content", "--color-error-content", "Foreground content color to use on error color"}
     ]
-
-    content_colors = %{
-      "primary" => "primary-content",
-      "secondary" => "secondary-content",
-      "accent" => "accent-content",
-      "neutral" => "neutral-content",
-      "base-100" => "base-content",
-      "base-200" => "base-content",
-      "base-300" => "base-content",
-      "info" => "info-content",
-      "success" => "success-content",
-      "warning" => "warning-content",
-      "error" => "error-content"
-    }
 
     ~H"""
     <div class="max-w-7xl mx-auto space-y-8">
@@ -64,26 +59,10 @@ defmodule Storybook.Components.Colors do
             <%= for {name, var, desc} <- colors do %>
               <tr>
                 <td class="text-center">
-                  <div class={"w-16 h-12 rounded bg-" <> name <> " flex items-center justify-center border border-base-300 mx-auto relative"}>
-                    <span class={"text-xs font-bold text-" <> content_colors[name] <> " mix-blend-difference"}>
-                      {name}
-                    </span>
-                    <!-- Fallback text for visibility -->
-                    <span class="absolute inset-0 flex items-center justify-center text-xs font-bold text-black mix-blend-difference opacity-30">
-                      {name}
-                    </span>
-                  </div>
+                  <div class={"w-16 h-12 rounded-lg bg-" <> name <> " border border-base-300 mx-auto"}></div>
                 </td>
                 <td class="text-center" data-theme="dark">
-                  <div class={"w-16 h-12 rounded bg-" <> name <> " flex items-center justify-center border border-base-300 mx-auto relative"}>
-                    <span class={"text-xs font-bold text-" <> content_colors[name] <> " mix-blend-difference"}>
-                      {name}
-                    </span>
-                    <!-- Fallback text for visibility -->
-                    <span class="absolute inset-0 flex items-center justify-center text-xs font-bold text-white mix-blend-difference opacity-30">
-                      {name}
-                    </span>
-                  </div>
+                  <div class={"w-16 h-12 rounded-lg bg-" <> name <> " border border-base-300 mx-auto"}></div>
                 </td>
                 <td class="font-mono text-sm">{name}</td>
                 <td class="font-mono text-xs">{var}</td>
