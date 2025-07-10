@@ -12,9 +12,19 @@ export const OklchColorValue = {
     if (closestContainer) {
       const computedStyle = window.getComputedStyle(closestContainer);
       const backgroundColor = computedStyle.getPropertyValue(cssVar);
-      this.el.textContent = backgroundColor || 'N/A';
-      // Calculate text color based on background brightness
-      this.updateTextColor(backgroundColor);
+
+      if (backgroundColor) {
+        this.el.textContent = backgroundColor;
+        // Calculate text color based on background brightness
+        this.updateTextColor(backgroundColor);
+
+        // Create the oklch.com URL with the color values
+        const oklchUrl = this.createOklchUrl(backgroundColor);
+        this.el.href = oklchUrl;
+      } else {
+        this.el.textContent = 'N/A';
+        this.el.href = '#';
+      }
     }
   },
 
@@ -83,6 +93,22 @@ export const OklchColorValue = {
     
     // Calculate relative luminance
     return 0.2126 * rLinear + 0.7152 * gLinear + 0.0722 * bLinear;
+  },
+
+  createOklchUrl(oklchString) {
+    // Parse OKLCH string like "oklch(49.12% 0.3096 275.75)"
+    const match = oklchString.match(/oklch\(([^)]+)\)/);
+    if (!match) return 'https://oklch.com/';
+    
+    const values = match[1].split(' ').map(v => v.trim());
+    if (values.length < 3) return 'https://oklch.com/';
+    
+    const l = parseFloat(values[0]); // Lightness (0-100)
+    const c = parseFloat(values[1]); // Chroma
+    const h = parseFloat(values[2]); // Hue (degrees)
+    
+    // Format for oklch.com URL: https://oklch.com/#l,c,h,100
+    return `https://oklch.com/#${l},${c},${h},100`;
   }
 }
 

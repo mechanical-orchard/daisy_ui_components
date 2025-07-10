@@ -165,28 +165,34 @@ defmodule Storybook.Components.Colors do
               <tr>
                 <td class="text-center" data-theme="light">
                   <div class={"w-56 h-16 rounded-lg " <> color.class <> " border border-base-300 mx-auto flex items-center justify-center"}>
-                    <span
-                      class={"text-xs font-mono " <> color.class <> " px-1 rounded whitespace-nowrap"}
+                    <a
+                      class={"text-xs font-mono " <> color.class <> " px-1 rounded whitespace-nowrap no-underline hover:underline"}
                       id={"oklch-light-" <> color.name}
                       phx-hook="OklchColorValue"
                       data-theme="light"
                       data-css-var={color.css_var}
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Loading...
-                    </span>
+                    </a>
                   </div>
                 </td>
                 <td class="text-center" data-theme="dark">
                   <div class={"w-56 h-16 rounded-lg " <> color.class <> " border border-base-300 mx-auto flex items-center justify-center"}>
-                    <span
-                      class={"text-xs font-mono " <> color.class <> " px-1 rounded whitespace-nowrap"}
+                    <a
+                      class={"text-xs font-mono " <> color.class <> " px-1 rounded whitespace-nowrap no-underline hover:underline"}
                       id={"oklch-dark-" <> color.name}
                       phx-hook="OklchColorValue"
                       data-theme="dark"
                       data-css-var={color.css_var}
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Loading...
-                    </span>
+                    </a>
                   </div>
                 </td>
                 <td class="font-mono text-sm">{color.name}</td>
