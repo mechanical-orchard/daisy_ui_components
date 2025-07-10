@@ -5,142 +5,122 @@ defmodule Storybook.Components.Colors do
     %{
       name: "primary",
       class: "bg-primary",
-      description: "Primary brand color, The main color of your brand",
-      light_oklch: "oklch(49.12% 0.3096 275.75)",
-      dark_oklch: "oklch(49.12% 0.3096 275.75)"
+      css_var: "--color-primary",
+      description: "Primary brand color, The main color of your brand"
     },
     %{
       name: "primary-content",
       class: "bg-primary-content",
-      description: "Foreground content color to use on primary color",
-      light_oklch: "oklch(98.71% 0.0106 275.75)",
-      dark_oklch: "oklch(98.71% 0.0106 275.75)"
+      css_var: "--color-primary-content",
+      description: "Foreground content color to use on primary color"
     },
     %{
       name: "secondary",
       class: "bg-secondary",
-      description: "Secondary brand color, The optional, secondary color of your brand",
-      light_oklch: "oklch(60.32% 0.191 183.61)",
-      dark_oklch: "oklch(60.32% 0.191 183.61)"
+      css_var: "--color-secondary",
+      description: "Secondary brand color, The optional, secondary color of your brand"
     },
     %{
       name: "secondary-content",
       class: "bg-secondary-content",
-      description: "Foreground content color to use on secondary color",
-      light_oklch: "oklch(98.71% 0.0106 183.61)",
-      dark_oklch: "oklch(98.71% 0.0106 183.61)"
+      css_var: "--color-secondary-content",
+      description: "Foreground content color to use on secondary color"
     },
     %{
       name: "accent",
       class: "bg-accent",
-      description: "Accent brand color, The optional, accent color of your brand",
-      light_oklch: "oklch(64.32% 0.229 183.61)",
-      dark_oklch: "oklch(64.32% 0.229 183.61)"
+      css_var: "--color-accent",
+      description: "Accent brand color, The optional, accent color of your brand"
     },
     %{
       name: "accent-content",
       class: "bg-accent-content",
-      description: "Foreground content color to use on accent color",
-      light_oklch: "oklch(98.71% 0.0106 183.61)",
-      dark_oklch: "oklch(98.71% 0.0106 183.61)"
+      css_var: "--color-accent-content",
+      description: "Foreground content color to use on accent color"
     },
     %{
       name: "neutral",
       class: "bg-neutral",
-      description: "Neutral dark color, For not-saturated parts of UI",
-      light_oklch: "oklch(25.08% 0 0)",
-      dark_oklch: "oklch(25.08% 0 0)"
+      css_var: "--color-neutral",
+      description: "Neutral dark color, For not-saturated parts of UI"
     },
     %{
       name: "neutral-content",
       class: "bg-neutral-content",
-      description: "Foreground content color to use on neutral color",
-      light_oklch: "oklch(98.71% 0.0106 0)",
-      dark_oklch: "oklch(98.71% 0.0106 0)"
+      css_var: "--color-neutral-content",
+      description: "Foreground content color to use on neutral color"
     },
     %{
       name: "base-100",
       class: "bg-base-100",
-      description: "Base surface color of page, used for blank backgrounds",
-      light_oklch: "oklch(100% 0 0)",
-      dark_oklch: "oklch(0% 0 0)"
+      css_var: "--color-base-100",
+      description: "Base surface color of page, used for blank backgrounds"
     },
     %{
       name: "base-200",
       class: "bg-base-200",
-      description: "Base color, darker shade, to create elevations",
-      light_oklch: "oklch(96.05% 0.0059 0)",
-      dark_oklch: "oklch(13.63% 0.0059 0)"
+      css_var: "--color-base-200",
+      description: "Base color, darker shade, to create elevations"
     },
     %{
       name: "base-300",
       class: "bg-base-300",
-      description: "Base color, even more darker shade, to create elevations",
-      light_oklch: "oklch(91.49% 0.0118 0)",
-      dark_oklch: "oklch(27.25% 0.0118 0)"
+      css_var: "--color-base-300",
+      description: "Base color, even more darker shade, to create elevations"
     },
     %{
       name: "base-content",
       class: "bg-base-content",
-      description: "Foreground content color to use on base color",
-      light_oklch: "oklch(25.08% 0 0)",
-      dark_oklch: "oklch(98.71% 0.0106 0)"
+      css_var: "--color-base-content",
+      description: "Foreground content color to use on base color"
     },
     %{
       name: "info",
       class: "bg-info",
-      description: "Info color, For informative/helpful messages",
-      light_oklch: "oklch(79.12% 0.1573 229.18)",
-      dark_oklch: "oklch(79.12% 0.1573 229.18)"
+      css_var: "--color-info",
+      description: "Info color, For informative/helpful messages"
     },
     %{
       name: "info-content",
       class: "bg-info-content",
-      description: "Foreground content color to use on info color",
-      light_oklch: "oklch(98.71% 0.0106 229.18)",
-      dark_oklch: "oklch(98.71% 0.0106 229.18)"
+      css_var: "--color-info-content",
+      description: "Foreground content color to use on info color"
     },
     %{
       name: "success",
       class: "bg-success",
-      description: "Success color, For success/safe messages",
-      light_oklch: "oklch(71.32% 0.1968 142.5)",
-      dark_oklch: "oklch(71.32% 0.1968 142.5)"
+      css_var: "--color-success",
+      description: "Success color, For success/safe messages"
     },
     %{
       name: "success-content",
       class: "bg-success-content",
-      description: "Foreground content color to use on success color",
-      light_oklch: "oklch(98.71% 0.0106 142.5)",
-      dark_oklch: "oklch(98.71% 0.0106 142.5)"
+      css_var: "--color-success-content",
+      description: "Foreground content color to use on success color"
     },
     %{
       name: "warning",
       class: "bg-warning",
-      description: "Warning color, For warning/caution messages",
-      light_oklch: "oklch(85.49% 0.1871 85.87)",
-      dark_oklch: "oklch(85.49% 0.1871 85.87)"
+      css_var: "--color-warning",
+      description: "Warning color, For warning/caution messages"
     },
     %{
       name: "warning-content",
       class: "bg-warning-content",
-      description: "Foreground content color to use on warning color",
-      light_oklch: "oklch(25.08% 0 85.87)",
-      dark_oklch: "oklch(25.08% 0 85.87)"
+      css_var: "--color-warning-content",
+      description: "Foreground content color to use on warning color"
     },
     %{
       name: "error",
       class: "bg-error",
-      description: "Error color, For error/danger/destructive messages",
-      light_oklch: "oklch(63.32% 0.2406 29.23)",
-      dark_oklch: "oklch(63.32% 0.2406 29.23)"
+      css_var: "--color-error",
+      description: "Error color, For error/danger/destructive messages"
     },
     %{
       name: "error-content",
       class: "bg-error-content",
-      description: "Foreground content color to use on error color",
-      light_oklch: "oklch(98.71% 0.0106 29.23)",
-      dark_oklch: "oklch(98.71% 0.0106 29.23)"
+      css_var: "--color-error-content",
+      description: "Foreground content color to use on error color"
     }
   ]
 
@@ -183,15 +163,21 @@ defmodule Storybook.Components.Colors do
               <tr>
                 <td class="text-center" data-theme="light">
                   <div class={"w-56 h-16 rounded-lg " <> color.class <> " border border-base-300 mx-auto flex items-center justify-center"}>
-                    <span class={"text-xs font-mono " <> color.class <> " px-1 rounded whitespace-nowrap"}>
-                      {color.light_oklch}
+                    <span
+                      class={"text-xs font-mono " <> color.class <> " px-1 rounded whitespace-nowrap"}
+                      id={"oklch-light-" <> color.name}
+                    >
+                      Loading...
                     </span>
                   </div>
                 </td>
                 <td class="text-center" data-theme="dark">
                   <div class={"w-56 h-16 rounded-lg " <> color.class <> " border border-base-300 mx-auto flex items-center justify-center"}>
-                    <span class={"text-xs font-mono " <> color.class <> " px-1 rounded whitespace-nowrap"}>
-                      {color.dark_oklch}
+                    <span
+                      class={"text-xs font-mono " <> color.class <> " px-1 rounded whitespace-nowrap"}
+                      id={"oklch-dark-" <> color.name}
+                    >
+                      Loading...
                     </span>
                   </div>
                 </td>
@@ -204,6 +190,42 @@ defmodule Storybook.Components.Colors do
         </table>
       </div>
     </div>
+
+    <script>
+      function updateOKLCHValues() {
+        const colors = <%= Jason.encode!(@colors) %>;
+
+        colors.forEach(color => {
+          // Get the light theme element
+          const lightElement = document.getElementById(`oklch-light-${color.name}`);
+          if (lightElement) {
+            const lightContainer = lightElement.closest('[data-theme="light"]');
+            if (lightContainer) {
+              const computedStyle = window.getComputedStyle(lightContainer);
+              const backgroundColor = computedStyle.getPropertyValue(color.css_var);
+              lightElement.textContent = backgroundColor || 'N/A';
+            }
+          }
+
+          // Get the dark theme element
+          const darkElement = document.getElementById(`oklch-dark-${color.name}`);
+          if (darkElement) {
+            const darkContainer = darkElement.closest('[data-theme="dark"]');
+            if (darkContainer) {
+              const computedStyle = window.getComputedStyle(darkContainer);
+              const backgroundColor = computedStyle.getPropertyValue(color.css_var);
+              darkElement.textContent = backgroundColor || 'N/A';
+            }
+          }
+        });
+      }
+
+      // Run on page load
+      updateOKLCHValues();
+
+      // Also run when theme changes (if using theme toggle)
+      document.addEventListener('DOMContentLoaded', updateOKLCHValues);
+    </script>
     """
   end
 end
