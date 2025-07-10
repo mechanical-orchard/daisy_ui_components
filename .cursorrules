@@ -28,7 +28,7 @@
 
 ## Git Commit Standards
 - Run `mix format` before every commit (handled by pre-commit hook)
-- Use conventional commit messages
+- Do not use conventional commit messages
 - Include ticket references in format [sc-XXXXX]
 - Add Co-authored-by lines when pair programming
 - Always ask before committing
