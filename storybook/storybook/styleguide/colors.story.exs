@@ -52,12 +52,12 @@ defmodule Storybook.Components.Colors do
     %{name: "error-content", class: "bg-error-content", description: "Foreground content color to use on error color"}
   ]
 
-  @impl true
+  @impl Phoenix.LiveView
   def mount(_params, _session, socket) do
     {:ok, assign(socket, colors: @colors)}
   end
 
-  @impl true
+  @impl Phoenix.LiveView
   def render(assigns) do
     ~H"""
     <div class="max-w-7xl mx-auto space-y-8">
@@ -86,6 +86,7 @@ defmodule Storybook.Components.Colors do
               <th class="text-left">Where to use</th>
             </tr>
           </thead>
+
           <tbody>
             <%= for color <- @colors do %>
               <tr>
