@@ -1,4 +1,6 @@
 defmodule Storybook.Components.Colors do
+  @moduledoc false
+
   use PhoenixStorybook.Story, :example
 
   @colors [
@@ -192,39 +194,41 @@ defmodule Storybook.Components.Colors do
     </div>
 
     <script>
-      function updateOKLCHValues() {
+      onMounted(() => {
         const colors = <%= Jason.encode!(@colors) %>;
 
-        colors.forEach(color => {
-          // Get the light theme element
-          const lightElement = document.getElementById(`oklch-light-${color.name}`);
-          if (lightElement) {
-            const lightContainer = lightElement.closest('[data-theme="light"]');
-            if (lightContainer) {
-              const computedStyle = window.getComputedStyle(lightContainer);
-              const backgroundColor = computedStyle.getPropertyValue(color.css_var);
-              lightElement.textContent = backgroundColor || 'N/A';
+        function updateOKLCHValues() {
+          colors.forEach(color => {
+            // Get the light theme element
+            const lightElement = document.getElementById(`oklch-light-${color.name}`);
+            if (lightElement) {
+              const lightContainer = lightElement.closest('[data-theme="light"]');
+              if (lightContainer) {
+                const computedStyle = window.getComputedStyle(lightContainer);
+                const backgroundColor = computedStyle.getPropertyValue(color.css_var);
+                lightElement.textContent = backgroundColor || 'N/A';
+              }
             }
-          }
 
-          // Get the dark theme element
-          const darkElement = document.getElementById(`oklch-dark-${color.name}`);
-          if (darkElement) {
-            const darkContainer = darkElement.closest('[data-theme="dark"]');
-            if (darkContainer) {
-              const computedStyle = window.getComputedStyle(darkContainer);
-              const backgroundColor = computedStyle.getPropertyValue(color.css_var);
-              darkElement.textContent = backgroundColor || 'N/A';
+            // Get the dark theme element
+            const darkElement = document.getElementById(`oklch-dark-${color.name}`);
+            if (darkElement) {
+              const darkContainer = darkElement.closest('[data-theme="dark"]');
+              if (darkContainer) {
+                const computedStyle = window.getComputedStyle(darkContainer);
+                const backgroundColor = computedStyle.getPropertyValue(color.css_var);
+                darkElement.textContent = backgroundColor || 'N/A';
+              }
             }
-          }
-        });
-      }
+          });
+        }
 
-      // Run on page load
-      updateOKLCHValues();
+        // Run on mount
+        updateOKLCHValues();
 
-      // Also run when theme changes (if using theme toggle)
-      document.addEventListener('DOMContentLoaded', updateOKLCHValues);
+        // Also run when theme changes (if using theme toggle)
+        document.addEventListener('DOMContentLoaded', updateOKLCHValues);
+      })
     </script>
     """
   end
