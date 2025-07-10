@@ -48,7 +48,7 @@ defmodule Storybook.Components.Colors do
         <table class="table w-full">
           <thead>
             <tr>
-              <th class="text-center">Light</th>
+              <th class="text-center" data-theme="light">Light</th>
               <th class="text-center" data-theme="dark">Dark</th>
               <th class="text-left">Color name</th>
               <th class="text-left">CSS variable</th>
@@ -58,7 +58,7 @@ defmodule Storybook.Components.Colors do
           <tbody>
             <%= for {name, var, desc} <- colors do %>
               <tr>
-                <td class="text-center">
+                <td class="text-center" data-theme="light">
                   <div class={"w-16 h-12 rounded-lg bg-" <> name <> " border border-base-300 mx-auto"}></div>
                 </td>
                 <td class="text-center" data-theme="dark">
